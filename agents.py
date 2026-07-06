@@ -4,8 +4,8 @@ agents.py
 Agent definitions for the Multi-Agent Code Review system.
 """
 
-from crewai import Agent, LLM
-
+from crewai import Agent
+from config import get_llm
 
 def create_senior_developer(llm: LLM) -> Agent:
     return Agent(

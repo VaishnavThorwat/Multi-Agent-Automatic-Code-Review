@@ -15,9 +15,7 @@ def create_tools():
     Returns:
         tuple: (serper_search_tool, scrape_website_tool)
     """
-    serper_search_tool = SerperDevTool(
-        search_url="https://owasp.org",
-    )
+    serper_search_tool = SerperDevTool()
     scrape_website_tool = ScrapeWebsiteTool()
 
     return serper_search_tool, scrape_website_tool

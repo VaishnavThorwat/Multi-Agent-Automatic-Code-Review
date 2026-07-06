@@ -28,7 +28,7 @@ def setup_environment():
     """Load .env file and validate required API keys."""
     load_dotenv()
 
-    missing = [v for v in ["OPENAI_API_KEY", "SERPER_API_KEY"] if not os.getenv(v)]
+    missing = [v for v in ["GEMINI_API_KEY", "SERPER_API_KEY"] if not os.getenv(v)]
     if missing:
         print(f"[Error] Missing environment variables: {', '.join(missing)}")
         print("Add them to your .env file. See README for details.")
@@ -79,7 +79,7 @@ def main():
     print(f"\n[Main] Loaded {len(code_changes)} characters of code changes.")
 
     # LLM
-    llm = LLM(model=os.getenv("MODEL", "gpt-4o-mini"))
+    llm = LLM(model=os.getenv("MODEL", "gemini/gemini-2.0-flash"))
 
     # Build & run
     crew = build_crew(llm)
